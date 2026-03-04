@@ -74,13 +74,13 @@ run_in_background = False           # True or False, Note: True or False are cas
 disable_extensions = False          # True or False, Note: True or False are case-sensitive
 
 # Run in safe mode. Set this true if chrome is taking too long to open or if you have multiple profiles in browser. This will open chrome in guest profile!
-safe_mode = False                    # True or False, Note: True or False are case-sensitive
+safe_mode = False                   # True or False, Note: True or False are case-sensitive
 
 # Do you want scrolling to be smooth or instantaneous? (Can reduce performance if True)
 smooth_scroll = False               # True or False, Note: True or False are case-sensitive
 
 # If enabled (True), the program would keep your screen active and prevent PC from sleeping. Instead you could disable this feature (set it to false) and adjust your PC sleep settings to Never Sleep or a preferred time. 
-keep_screen_awake = True            # True or False, Note: True or False are case-sensitive (Note: Will temporarily deactivate when any application dialog boxes are present (Eg: Pause before submit, Help needed for a question..))
+keep_screen_awake = False           # True or False, Note: True or False are case-sensitive (Note: Will temporarily deactivate when any application dialog boxes are present (Eg: Pause before submit, Help needed for a question..))
 
 # Run in undetected mode to bypass anti-bot protections (Preview Feature, UNSTABLE. Recommended to leave it as False)
 stealth_mode = False                # True or False, Note: True or False are case-sensitive

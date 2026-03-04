@@ -112,7 +112,7 @@ def critical_error_log(possible_reason: str, stack_trace: Exception) -> None:
     '''
     Function to log and print critical errors along with datetime stamp
     '''
-    print_lg(possible_reason, stack_trace, datetime.now(), from_critical=True)
+    print_lg(possible_reason, str(stack_trace), str(datetime.now()), from_critical=True)
 
 
 def get_log_path():
@@ -137,13 +137,13 @@ def print_lg(*msgs: str | dict, end: str = "\n", pretty: bool = False, flush: bo
     try:
         for message in msgs:
             pprint(message) if pretty else print(message, end=end, flush=flush)
-            with open(__logs_file_path, 'a+', encoding="utf-8") as file:
-                file.write(str(message) + end)
+            try:
+                with open(__logs_file_path, 'a+', encoding="utf-8") as file:
+                    file.write(str(message) + end)
+            except:
+                pass
     except Exception as e:
-        trail = f'Skipped saving this message: "{message}" to log.txt!' if from_critical else "We'll try one more time to log..."
-        alert(f"log.txt in {logs_folder_path} is open or is occupied by another program! Please close it! {trail}", "Failed Logging")
-        if not from_critical:
-            critical_error_log("Log.txt is open or is occupied by another program!", e)
+        pass
 #>
 
 
